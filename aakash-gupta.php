@@ -37,7 +37,7 @@
                </div>
                <div class="vision-single ">
                   <h2 class="f-bold">Mr. AAKASH U GUPTA</h2>
-                    <h3 class="f-semibold">Head - Finance</h3>
+                    <h3 class="f-semibold">Head - Financedfljef</h3>
                   <p class="f-regular">Joined BCCL in 2025, Aakash is a Chartered Accountant & holds a Master’s degree in Management from IIM Indore. He has a professional experience of 17 years and was associated with Sesa Care Pvt. Ltd. as Chief Financial Officer. He has also worked with Fullife Healthcare Pvt. Ltd. and Sleep Management Pvt. Ltd.</p>
                  
                </div>
