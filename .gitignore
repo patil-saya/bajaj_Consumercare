@@ -1,0 +1,52 @@
+# -------------------------
+# OS Files
+# -------------------------
+.DS_Store
+Thumbs.db
+
+# -------------------------
+# IDE Files
+# -------------------------
+.vscode/
+.idea/
+
+# -------------------------
+# Environment
+# -------------------------
+.env
+
+# -------------------------
+# Logs
+# -------------------------
+*.log
+
+# -------------------------
+# Dependencies
+# -------------------------
+vendor/
+node_modules/
+
+# -------------------------
+# Ignore PDF Folder
+# -------------------------
+pdf/
+
+# Ignore all PDF files
+*.pdf
+
+# -------------------------
+# Ignore Large Asset Folders
+# (Folder names apne project ke hisab se change karein)
+# -------------------------
+assets/audio/
+assets/css/
+assets/fonts/
+assets/images/
+assets/js/
+assets/videos/
+assets/webp/
+
+# Backup Files
+*.zip
+*.rar
+*.bak

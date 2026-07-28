@@ -1,0 +1,142 @@
+.display{
+    padding-top: 12px;
+    background-color:#ffffff;
+    box-shadow: 0 10px 27px 0 rgba(0, 0, 0, 0.07);
+    text-align: center;
+    font-family: 'Poppins', sasn-serif;
+    font-size: 12px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #fff;
+    border-radius: 5px;
+    }
+
+    /* button.btn.btn-secondary.buttons-excel.buttons-html5.btn-link {
+      background-color: #f9f9f9;
+      border: none;
+      color: black;
+      text-decoration-line: none;
+      font-weight: 500;
+      font-size: 14px;
+      margin-right: 45px;
+      font-family: Poppins;
+    }
+
+    .btn-link:hover {
+      color: black;
+  }
+    .btn .btn-secondary .buttons-excel .buttons-html5 .btn-link {
+      margin-left: 0;
+      border: none;
+  } */
+  
+    table.dataTable.display tbody td {
+      border-top: none;
+      border-bottom: none !important;
+      line-height: 4;
+      /* padding: 36px 0px 36px 22px;   */
+      text-align: center;
+      padding: 24px;
+      font-family: 'Poppins', sasn-serif;
+      font-size: 12px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #333;
+    }
+  
+    table.dataTable thead th, table.dataTable thead td {
+      text-align: center;
+      /* margin: 10px 0px 18px 22px; */
+      /* padding-left: 22px; */
+      border-bottom: none;
+      font-family: 'Poppins', sasn-serif;
+      font-size: 12px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #fff;
+      height: 59px; 
+  }
+
+  .table thead th {
+    vertical-align: middle;
+    border-bottom:none;
+}
+  
+ 
+  div.dt-buttons {
+      position: relative;
+      float: right;
+      margin-top: 20px;
+      text-decoration: none;
+      border:none;   
+      /* background-color: #f7faff; */
+      /* background: right 41% / 10% 50% no-repeat url("/medic24x7/public/images/excel.png"); */
+      background-position: 92% 60%;
+      background-size: 40px;
+      
+  }
+  
+  .dataTables_wrapper .dataTables_filter{
+    float: left;
+    margin-top: 12px;
+    padding: 9px;
+    /* font-family: Roboto, Helvetica, sans-serif; */
+  }
+  .thead{
+     margin: 0px 0px;
+     color:white;
+     border: none!important;
+     /* background-color:#405678; */
+     font-size: 12px; 
+     font-family: Poppins, sans-serif;
+     height: 59px!important;
+     background-image: linear-gradient(to bottom, #546987 -118%, #374f72); 
+     margin-bottom: 0px;
+  }
+  
+  .thead th:first-child {
+    border-left: none!important;
+    border-top-left-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+}
+.thead th:last-child{
+  
+    border-right: none!important; 
+    border-top-right-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topright: 5px;
+}
+  table.dataTable thead .sorting {
+       background-image: none !important
+  }
+  
+  .action {
+      color: #d4d2d2;
+      text-decoration: none;
+      font-family: Poppins, sans-serif;
+  }
+  
+  .action:active {
+    color: #4285f4 !important;
+  }
+  .action:hover {
+    color: #4285f4 !important;
+  }
+  
+  .page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #405678;
+    border-color: #405678;
+    border-radius: 5px!important;
+}

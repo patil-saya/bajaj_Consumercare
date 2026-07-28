@@ -1,0 +1,31 @@
+# Enable the RewriteEngine
+RewriteEngine On
+
+# Redirect HTTP and WWW to HTTPS non-WWW
+#RewriteCond %{HTTPS} !=on [OR]
+#RewriteCond %{HTTP_HOST} ^www\.bajajconsumercare\.com$ [NC]
+#RewriteRule ^(.*)$ https://bajajconsumercare.com/$1 [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^www\.bajajconsumercare\.com$ [NC]
+RewriteRule ^(.*)$ http://bajajconsumercare.com/$1 [R=301,L]
+
+# Redirect /More_Details_of_Products.aspx?id=8 to /almond-hair-oil
+RewriteCond %{QUERY_STRING} ^id=8$
+RewriteRule ^More_Details_of_Products\.aspx$ /almonds-drops-hair-oil? [R=301,L]
+
+# Redirect all .php URLs to their corresponding URLs without the .php extension
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.php\s
+RewriteRule ^ %1 [R=301,L]
+
+# Internally rewrite URLs without an extension to .php files if they exist
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
+
+
+<IfModule mod_headers.c>
+    Header set Cache-Control "no-store, no-cache, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+</IfModule>

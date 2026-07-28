@@ -1,0 +1,1590 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Medic 24x7 App",
+        "description": "REST API's for Medic24x7 application",
+        "termsOfService": "",
+        "contact": {
+            "email": "sayalib@leometric.com"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/v1/user/login": {
+            "post": {
+                "tags": [
+                    "LOGIN CUSTOMER"
+                ],
+                "summary": "Send OTP/Login",
+                "operationId": "sendOtp",
+                "parameters": [
+                    {
+                        "name": "mobile",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/api/v1/user/verifyotp": {
+            "post": {
+                "tags": [
+                    "LOGIN CUSTOMER"
+                ],
+                "summary": "Verify OTP",
+                "operationId": "verifyotp",
+                "parameters": [
+                    {
+                        "name": "mobile",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "otp",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/api/v1/user/profile": {
+            "get": {
+                "tags": [
+                    "CUSTOMER PROFILE"
+                ],
+                "summary": "Get User Profile",
+                "operationId": "profile",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/user/update/{id}": {
+            "put": {
+                "tags": [
+                    "CUSTOMER PROFILE"
+                ],
+                "summary": "Update Customer Profile",
+                "operationId": "updateprofile",
+                "parameters": [
+                    {
+                        "name": "user_mobile",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "gender",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "state",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "city",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "pincode",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/user/addBookmark": {
+            "post": {
+                "tags": [
+                    "Bookmark"
+                ],
+                "summary": "Insert/Update Bookmark",
+                "operationId": "bookmark",
+                "parameters": [
+                    {
+                        "name": "partner_id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "customer_id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "is_marked",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/user/bookmark/list": {
+            "get": {
+                "tags": [
+                    "Bookmark"
+                ],
+                "summary": "Bookmark List",
+                "operationId": "sendOtp",
+                "parameters": [
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "customer_id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/category/list": {
+            "get": {
+                "tags": [
+                    "Category List Partner/User"
+                ],
+                "summary": "Category List",
+                "operationId": "sendOtp",
+                "parameters": [
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/user/createEnquiry": {
+            "post": {
+                "tags": [
+                    "Enquiry"
+                ],
+                "summary": "Insert Enquiry",
+                "operationId": "enquiry",
+                "parameters": [
+                    {
+                        "name": "partner_id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "customer_id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/admin/doctorlist": {
+            "get": {
+                "tags": [
+                    "Doctor"
+                ],
+                "summary": "Doctor List",
+                "operationId": "doctor",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/partner/list": {
+            "get": {
+                "tags": [
+                    "Partner List "
+                ],
+                "summary": "Partner List",
+                "operationId": "sendOtp",
+                "parameters": [
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/admin/bedlist": {
+            "get": {
+                "tags": [
+                    "Beds"
+                ],
+                "summary": "Bed List",
+                "operationId": "bed",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/admin/createAmbulance": {
+            "post": {
+                "tags": [
+                    "Ambulance"
+                ],
+                "summary": "Insert ambulance",
+                "operationId": "sendOtp",
+                "parameters": [
+                    {
+                        "name": "partner_id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "ambulance_type",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "total_amb",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "amb_occupied",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "price",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "about",
+                        "in": "query",
+                        "required": false
+                    },
+                    {
+                        "name": "image",
+                        "in": "query",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/admin/updateAmbulance/{id}": {
+            "put": {
+                "tags": [
+                    "Ambulance"
+                ],
+                "summary": "Update ambulance",
+                "operationId": "sendOtp",
+                "parameters": [
+                    {
+                        "name": "total_amb",
+                        "in": "query",
+                        "required": false
+                    },
+                    {
+                        "name": "amb_occupied",
+                        "in": "query",
+                        "required": false
+                    },
+                    {
+                        "name": "price",
+                        "in": "query",
+                        "required": false
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "name": "about",
+                        "in": "query",
+                        "required": false
+                    },
+                    {
+                        "name": "image",
+                        "in": "query",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/admin/viewAmbulance/{id}": {
+            "get": {
+                "tags": [
+                    "Ambulance"
+                ],
+                "summary": "View Ambulance",
+                "operationId": "city",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/admin/deleteAmbulance/{id}": {
+            "delete": {
+                "tags": [
+                    "Ambulance"
+                ],
+                "summary": "Delete Ambulance record",
+                "operationId": "ambulance",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/admin/ambulancelist": {
+            "get": {
+                "tags": [
+                    "Ambulance"
+                ],
+                "summary": "Ambulance List",
+                "operationId": "ambulance",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/admin/createBed": {
+            "post": {
+                "tags": [
+                    "Beds"
+                ],
+                "summary": "Insert Bed",
+                "operationId": "sendOtp",
+                "parameters": [
+                    {
+                        "name": "partner_id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "total_bed",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "bed_occupied",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "price",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/admin/updateBed/{id}": {
+            "put": {
+                "tags": [
+                    "Beds"
+                ],
+                "summary": "Update bed",
+                "operationId": "bed",
+                "parameters": [
+                    {
+                        "name": "total_bed",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "bed_occupied",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "price",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/admin/viewBed/{id}": {
+            "get": {
+                "tags": [
+                    "Beds"
+                ],
+                "summary": "View Bed",
+                "operationId": "bed",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/admin/deleteBed/{id}": {
+            "get": {
+                "tags": [
+                    "Beds"
+                ],
+                "summary": "Delete bed record",
+                "operationId": "ambulance",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/admin/cliniclist": {
+            "get": {
+                "tags": [
+                    "Clinic"
+                ],
+                "summary": "Clinic List",
+                "operationId": "Clinic",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/admin/createClinic": {
+            "post": {
+                "tags": [
+                    "Clinic"
+                ],
+                "summary": "Insert clinic",
+                "operationId": "clinic",
+                "parameters": [
+                    {
+                        "name": "partner_id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "speciality_id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "min_charges",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/admin/updateClinic/{id}": {
+            "put": {
+                "tags": [
+                    "Clinic"
+                ],
+                "summary": "Update Clinic",
+                "operationId": "sendOtp",
+                "parameters": [
+                    {
+                        "name": "min_charges",
+                        "in": "query",
+                        "required": false
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/admin/viewClinic/{id}": {
+            "get": {
+                "tags": [
+                    "Clinic"
+                ],
+                "summary": "View clinic",
+                "operationId": "Clinic",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/admin/createDoctor": {
+            "post": {
+                "tags": [
+                    "Doctor"
+                ],
+                "summary": "Insert createDoctor",
+                "operationId": "createDoctor",
+                "parameters": [
+                    {
+                        "name": "partner_id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "speciality_id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/admin/updateDoctor/{id}": {
+            "put": {
+                "tags": [
+                    "Doctor"
+                ],
+                "summary": "Update ambulance",
+                "operationId": "sendOtp",
+                "parameters": [
+                    {
+                        "name": "min_charges",
+                        "in": "query",
+                        "required": false
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/admin/viewDoctor/{id}": {
+            "get": {
+                "tags": [
+                    "Doctor"
+                ],
+                "summary": "View doctor",
+                "operationId": "doctor",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/admin/deleteDoctor/{id}": {
+            "delete": {
+                "tags": [
+                    "Doctor"
+                ],
+                "summary": "Delete Doctor record",
+                "operationId": "ambulance",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/admin/languages": {
+            "get": {
+                "tags": [
+                    "Languages"
+                ],
+                "summary": "Language List",
+                "operationId": "language",
+                "parameters": [
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/admin/login": {
+            "post": {
+                "tags": [
+                    "LOGIN PARTNER"
+                ],
+                "summary": "Send OTP/Login",
+                "operationId": "sendOtp",
+                "parameters": [
+                    {
+                        "name": "mobile",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/admin/verifyotp": {
+            "post": {
+                "tags": [
+                    "LOGIN PARTNER"
+                ],
+                "summary": "Verify OTP",
+                "operationId": "verifyotp",
+                "parameters": [
+                    {
+                        "name": "mobile",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "otp",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/admin/profile": {
+            "get": {
+                "tags": [
+                    "PARTNER PROFILE"
+                ],
+                "summary": "Get Partner Profile",
+                "operationId": "profile",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/admin/update/{id}": {
+            "put": {
+                "tags": [
+                    "PARTNER PROFILE"
+                ],
+                "summary": "Update Partner Profile",
+                "operationId": "updateprofile",
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "partner_type",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "mobile",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "address",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "latitude",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "longitude",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "speciality",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "availability",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "image",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "overview",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "payment_method",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "languages_spoken",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "international_assistance",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "tpa",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "bed_available",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "charges",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "hospital_chain_id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "state",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "city",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "pincode",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/admin/partner_type": {
+            "get": {
+                "tags": [
+                    "PARTNER TYPE"
+                ],
+                "summary": "Partner Type",
+                "operationId": "type",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/admin/paymethod": {
+            "get": {
+                "tags": [
+                    "Payment Method"
+                ],
+                "summary": "Payment Method List",
+                "operationId": "sendOtp",
+                "parameters": [
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/user/createRating": {
+            "post": {
+                "tags": [
+                    "Ratings/Review"
+                ],
+                "summary": "Insert Rating/Review",
+                "operationId": "sendOtp",
+                "parameters": [
+                    {
+                        "name": "partner_id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "customer_id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "ratings",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "review",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/user/state/list": {
+            "get": {
+                "tags": [
+                    "State-City List USER"
+                ],
+                "summary": "State List",
+                "operationId": "sendOtp",
+                "parameters": [
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/user/city/list": {
+            "get": {
+                "tags": [
+                    "State-City List USER"
+                ],
+                "summary": "City List",
+                "operationId": "city",
+                "parameters": [
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "state_id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "name": "bearerAuth",
+                "in": "header",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}

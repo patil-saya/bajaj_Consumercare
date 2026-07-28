@@ -1,0 +1,25 @@
+User-agent: *
+
+# Block raw PDF directories (serve via proper page links instead)
+Disallow: /pdf/archive/
+Disallow: /pdf/financial-result/
+Disallow: /pdf/general-meeting-agm/
+Disallow: /pdf/investors-presentation/
+Disallow: /pdf/disclouser/
+
+# Block internal/utility pages
+Disallow: /index
+Disallow: /sitemap.php
+Disallow: /annoucnmnet2017
+Disallow: /annoucnmnet2022
+
+# Block duplicate .php versions of pages (clean URLs are the canonical ones)
+Disallow: /*.php$
+
+# Allow all crawlers to access CSS, JS, and images
+Allow: /assets/
+Allow: /images/
+
+# Sitemap location
+Sitemap: https://bajajconsumercare.com/sitemap.xml
+
